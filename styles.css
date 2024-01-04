@@ -13,6 +13,8 @@
   --Black-opacity-for-lightbox-background: hsl(0, 0%, 0%);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -21,13 +23,144 @@
 
 body {
   font-size: 16px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+header {
+  display: grid;
+  max-width: 1100px;
+  grid-template-columns: repeat(12, 1fr);
+  border-bottom: 3px solid var(--neutral-Light-grayish-blue);
+
+  margin: 0px auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  gap: 60px;
+}
+
+header .logo {
+  grid-column: span 2;
+}
+
+header nav {
+  grid-column: 3 / span 6;
+
+  justify-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--neutral-Dark-grayish-blue);
+  font-size: 17px;
+  margin-right: 30px;
+}
+
+.profile-cart {
+  grid-column: 11 / span 2;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  justify-items: center;
+  justify-self: end;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-cart img {
+  width: 50px;
+}
+
+.grid-container {
+  max-width: 1020px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.grid-container img {
+  width: 100%;
+}
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.first-image {
+  grid-column: span 4;
+
+  overflow: hidden;
+}
+
+.images img {
+  border-radius: 20px;
+}
+
+.description {
+  display: grid;
+  padding: 0 60px;
+}
+
+.description h4 {
+  color: var(--primary-Orange);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.description .header-text {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  width: 250px;
+}
+.description .paragraph {
+  color: var(--neutral-Dark-grayish-blue);
+  margin-bottom: 20px;
+}
+.description span {
+  color: var(--primary-Orange);
+  background: var(--primary-pale-orange);
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
 
 /* ## Layout */
 /* The designs were created to the following widths:  */
 
 /* Mobile: 375px */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 475px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 375px;
+  }
+  header {
+    display: flex;
+    max-width: 100%;
+  }
+
+  nav {
+    display: none;
+  }
+  .grid-container {
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+   
+  }
 }
 /* Desktop: 1440px */
 @media screen and (max-width: 1440px) {
